@@ -1,7 +1,15 @@
+# Carpetas de compilación
 build/
 dist/
-nbproject/private/
+
+# Archivos compilados
 *.class
+
+# Configuración privada de NetBeans
 nbproject/private/
-nbproject/private/private.properties
-nbproject/private/private.xml
+
+# Archivos temporales y del sistema
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
