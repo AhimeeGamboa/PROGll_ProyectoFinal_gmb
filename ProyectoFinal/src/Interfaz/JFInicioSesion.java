@@ -19,6 +19,7 @@ public class JFInicioSesion extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setTitle("Inicio de sesión");
     }
 
     /**

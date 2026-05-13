@@ -20,6 +20,7 @@ public class JDErrorInicioSesion extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setTitle("Error al iniciar sesión");
     }
 
     /**
