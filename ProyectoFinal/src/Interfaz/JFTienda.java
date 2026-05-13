@@ -9,6 +9,7 @@ package Interfaz;
  * @author celia
  */
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 public class JFTienda extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFTienda.class.getName());
@@ -20,9 +21,7 @@ public class JFTienda extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
-//         setIconImage(
-//            new ImageIcon(getClass().getResource("C:\\proyectos\\PROGll_ProyectoFinal_gmb\\ProyectoFinal\\src\\Interfaz\\Iconos\\Logo_1.PNG")).getImage()
-//        );
+        setTitle("Ventana Principal - Tienda");
     }
 
     /**
@@ -147,6 +146,7 @@ public class JFTienda extends javax.swing.JFrame {
         JBCanasta.setBackground(new java.awt.Color(83, 215, 131));
         JBCanasta.setForeground(new java.awt.Color(87, 62, 28));
         JBCanasta.setText("Canasta");
+        JBCanasta.addActionListener(this::JBCanastaActionPerformed);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -207,6 +207,7 @@ public class JFTienda extends javax.swing.JFrame {
         JBFrutasesp.setBackground(new java.awt.Color(83, 215, 131));
         JBFrutasesp.setForeground(new java.awt.Color(87, 62, 28));
         JBFrutasesp.setText("Conócelas");
+        JBFrutasesp.addActionListener(this::JBFrutasespActionPerformed);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -343,12 +344,24 @@ public class JFTienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCatalogoActionPerformed
-        // TODO add your handling code here:
+    JDCatalogo ventana = new JDCatalogo(this, true);
+    ventana.setVisible(true);     
     }//GEN-LAST:event_JBCatalogoActionPerformed
 
     private void JBUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBUsuarioActionPerformed
-        // TODO add your handling code here:
+    JDUsuario ventana = new JDUsuario (this, true);
+    ventana.setVisible(true);
     }//GEN-LAST:event_JBUsuarioActionPerformed
+
+    private void JBFrutasespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBFrutasespActionPerformed
+    JDFrutasEspeciales ventana = new JDFrutasEspeciales (this, true);
+    ventana.setVisible(true);
+    }//GEN-LAST:event_JBFrutasespActionPerformed
+
+    private void JBCanastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCanastaActionPerformed
+    JDCanasta ventana = new JDCanasta (this, true);
+    ventana.setVisible(true);
+    }//GEN-LAST:event_JBCanastaActionPerformed
 
     /**
      * @param args the command line arguments

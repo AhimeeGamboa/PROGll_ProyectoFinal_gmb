@@ -8,16 +8,18 @@ package Interfaz;
  *
  * @author celia
  */
-public class JDAgregar extends javax.swing.JDialog {
+public class JDUsuario extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDAgregar.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDUsuario.class.getName());
 
     /**
-     * Creates new form JDAgregar
+     * Creates new form JDUsuario
      */
-    public JDAgregar(java.awt.Frame parent, boolean modal) {
+    public JDUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Usuario");
     }
 
     /**
@@ -70,7 +72,7 @@ public class JDAgregar extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                JDAgregar dialog = new JDAgregar(new javax.swing.JFrame(), true);
+                JDUsuario dialog = new JDUsuario(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

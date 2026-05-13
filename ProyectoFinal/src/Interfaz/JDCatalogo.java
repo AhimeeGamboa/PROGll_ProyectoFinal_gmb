@@ -18,6 +18,8 @@ public class JDCatalogo extends javax.swing.JDialog {
     public JDCatalogo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Catálogo");
     }
 
     /**

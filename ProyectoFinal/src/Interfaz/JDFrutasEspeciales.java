@@ -18,6 +18,8 @@ public class JDFrutasEspeciales extends javax.swing.JDialog {
     public JDFrutasEspeciales(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Frutas especiales");
     }
 
     /**
