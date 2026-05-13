@@ -8,14 +8,14 @@ package Interfaz;
  *
  * @author celia
  */
-public class JFInicioSecion extends javax.swing.JFrame {
+public class JFInicioSesion extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFInicioSecion.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFInicioSesion.class.getName());
 
     /**
      * Creates new form JFInicioSecion
      */
-    public JFInicioSecion() {
+    public JFInicioSesion() {
         initComponents();
     }
 
@@ -113,7 +113,7 @@ public class JFInicioSecion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new JFInicioSecion().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new JFInicioSesion().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
