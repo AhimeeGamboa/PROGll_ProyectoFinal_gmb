@@ -8,6 +8,6 @@ package Clases;
  *
  * @author celia
  */
-public class Fruta {
+public class Catalogo {
     
 }
