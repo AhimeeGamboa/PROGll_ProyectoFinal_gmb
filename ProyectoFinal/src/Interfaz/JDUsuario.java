@@ -53,7 +53,7 @@ public class JDUsuario extends javax.swing.JDialog {
         jLabel2.setText("Nombre: Usuario Ejemplo");
 
         jLabel4.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel4.setText("ID: 132026");
+        jLabel4.setText("Contraseña: 132026");
 
         JBCerrar.setBackground(new java.awt.Color(204, 0, 51));
         JBCerrar.setForeground(new java.awt.Color(255, 255, 204));
