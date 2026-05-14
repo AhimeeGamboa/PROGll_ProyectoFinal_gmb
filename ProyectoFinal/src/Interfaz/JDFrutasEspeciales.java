@@ -4,22 +4,30 @@
  */
 package Interfaz;
 
+import Clases.Canasta;
+import Clases.FrutaEspecial;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author celia
  */
 public class JDFrutasEspeciales extends javax.swing.JDialog {
     
+    private Canasta miCanasta;
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDFrutasEspeciales.class.getName());
 
     /**
      * Creates new form JDFrutasEspeciales
      */
-    public JDFrutasEspeciales(java.awt.Frame parent, boolean modal) {
+    public JDFrutasEspeciales(java.awt.Frame parent, boolean modal, Canasta canastaRecibida) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Frutas especiales");
+        
+        this.miCanasta = canastaRecibida;
     }
 
     /**
@@ -31,21 +39,181 @@ public class JDFrutasEspeciales extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        JMangosteen = new javax.swing.JButton();
+        JRambutan = new javax.swing.JButton();
+        JCarambola = new javax.swing.JButton();
+        JPitahaya = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setText("Catalogo de frutas especiales ");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(223, 223, 223))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        jLabel2.setText("Pitahaya");
+
+        jLabel3.setText("Carambola");
+
+        jLabel4.setText("Rambutan");
+
+        jLabel5.setText("Mangosteen ");
+
+        jLabel6.setText("$95.0");
+
+        jLabel7.setText("$120.0");
+
+        jLabel8.setText("$150.0");
+
+        jLabel9.setText("$200.0");
+
+        jLabel10.setText("México");
+
+        jLabel11.setText("Brasil");
+
+        jLabel12.setText("Tailandia");
+
+        jLabel13.setText("Indonesia");
+
+        JMangosteen.setText("Comprar");
+        JMangosteen.addActionListener(this::JMangosteenActionPerformed);
+
+        JRambutan.setText("Comprar");
+        JRambutan.addActionListener(this::JRambutanActionPerformed);
+
+        JCarambola.setText("Comprar");
+        JCarambola.addActionListener(this::JCarambolaActionPerformed);
+
+        JPitahaya.setText("Comprar");
+        JPitahaya.addActionListener(this::JPitahayaActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10))
+                        .addGap(100, 100, 100)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel12))
+                        .addGap(81, 81, 81)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel5)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(JPitahaya)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JCarambola)
+                        .addGap(56, 56, 56)
+                        .addComponent(JRambutan)
+                        .addGap(61, 61, 61)
+                        .addComponent(JMangosteen)))
+                .addGap(78, 78, 78))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 357, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(95, 95, 95)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JMangosteen, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JRambutan, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JCarambola, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JPitahaya, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JPitahayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPitahayaActionPerformed
+        FrutaEspecial pitahaya = new FrutaEspecial(201, "Pitahaya", 120.0, "México", "Verano");
+        miCanasta.agregarFruta(pitahaya);
+        JOptionPane.showMessageDialog(this, "Pitahaya agregada a la canasta");
+    }//GEN-LAST:event_JPitahayaActionPerformed
+
+    private void JCarambolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCarambolaActionPerformed
+        FrutaEspecial carambola = new FrutaEspecial(202, "Carambola", 95.0, "Brasil", "Otoño");
+        miCanasta.agregarFruta(carambola);
+        JOptionPane.showMessageDialog(this, "Carambola agregada");
+    }//GEN-LAST:event_JCarambolaActionPerformed
+
+    private void JRambutanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRambutanActionPerformed
+        FrutaEspecial rambutan = new FrutaEspecial(203, "Rambután", 150.0, "Tailandia", "Todo el año");
+        miCanasta.agregarFruta(rambutan);
+        JOptionPane.showMessageDialog(this, "Rambután agregado");
+    }//GEN-LAST:event_JRambutanActionPerformed
+
+    private void JMangosteenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMangosteenActionPerformed
+        FrutaEspecial mangostan = new FrutaEspecial(204, "Mangostán", 200.0, "Indonesia", "Primavera");
+        miCanasta.agregarFruta(mangostan);
+        JOptionPane.showMessageDialog(this, "Mangostán agregado");
+    }//GEN-LAST:event_JMangosteenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,21 +237,26 @@ public class JDFrutasEspeciales extends javax.swing.JDialog {
         //</editor-fold>
 
         /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                JDFrutasEspeciales dialog = new JDFrutasEspeciales(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JCarambola;
+    private javax.swing.JButton JMangosteen;
+    private javax.swing.JButton JPitahaya;
+    private javax.swing.JButton JRambutan;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -357,7 +357,7 @@ public class JFTienda extends javax.swing.JFrame {
     }//GEN-LAST:event_JBUsuarioActionPerformed
 
     private void JBFrutasespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBFrutasespActionPerformed
-    JDFrutasEspeciales ventana = new JDFrutasEspeciales (this, true);
+    JDFrutasEspeciales ventana = new JDFrutasEspeciales (this, true, miCanasta);
     ventana.setVisible(true);
     }//GEN-LAST:event_JBFrutasespActionPerformed
 
