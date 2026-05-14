@@ -41,6 +41,8 @@ public class JDCanasta extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         setTitle("Canasta");
         
+        cargarListaVisual();
+        
         if (this.miCanasta != null) {
         JTotal.setText("$ " + this.miCanasta.obtenerTotal());
         } else {
@@ -104,6 +106,7 @@ public class JDCanasta extends javax.swing.JDialog {
         JEliminar.setText("Eliminar");
         JEliminar.addActionListener(this::JEliminarActionPerformed);
 
+        listaVisualFrutas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listaVisualFrutas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,7 +169,18 @@ public class JDCanasta extends javax.swing.JDialog {
     }//GEN-LAST:event_JPagarActionPerformed
 
     private void JEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JEliminarActionPerformed
-        this.dispose();
+
+        int fila = listaVisualFrutas.getSelectedIndex();
+        if (fila != -1) {
+
+            miCanasta.eliminarFruta(fila);
+            cargarListaVisual(); 
+            JTotal.setText("$ " + miCanasta.obtenerTotal());
+            javax.swing.JOptionPane.showMessageDialog(this, "Producto removido con éxito.");
+
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, selecciona una fruta de la lista para eliminarla.");
+        }
     }//GEN-LAST:event_JEliminarActionPerformed
 
     /**
