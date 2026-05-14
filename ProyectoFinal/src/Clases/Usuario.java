@@ -6,8 +6,8 @@ package Clases;
 
 /**
  *
- * @author celia
+ * @author FERNS
  */
-public class Catalogo {
+public class Usuario {
     
 }
