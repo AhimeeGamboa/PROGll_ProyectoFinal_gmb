@@ -25,6 +25,7 @@ public class JDCatalogo extends javax.swing.JDialog {
         initComponents();
         this.miCanasta = canastaRecibida;
         setLocationRelativeTo(null);
+        setResizable(false);
         setTitle("Catálogo");
     }
     private Fruta buscarEnInventario(String nombre) {

@@ -39,6 +39,7 @@ public class JDCanasta extends javax.swing.JDialog {
         initComponents();
         this.miCanasta = canastaRecibida;
         setLocationRelativeTo(null);
+        setResizable(false);
         setTitle("Canasta");
         
         cargarListaVisual();

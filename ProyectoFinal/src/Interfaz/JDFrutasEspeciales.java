@@ -26,6 +26,7 @@ public class JDFrutasEspeciales extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Frutas especiales");
+        setResizable(false);
         
         this.miCanasta = canastaRecibida;
     }
