@@ -19,19 +19,34 @@ package Clases;
             this.temporada = temporada;
         }
 
-        public String getPais() {
-            return pais;
-        }
-
-        public void setPais(String pais) {
-            this.pais = pais;
-        }
-
-        public String getTemporada() {
-            return temporada;
-        }
-
-        public void setTemporada(String temporada) {
-            this.temporada = temporada;
-        }
+        /**
+     * @return the pais
+     */
+    public String getPais() {
+        return pais;
     }
+
+    /**
+     * @param pais the pais to set
+     */
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    /**
+     * @return the temporada
+     */
+    public String getTemporada() {
+        return temporada;
+    }
+
+    /**
+     * @param temporada the temporada to set
+     */
+    public void setTemporada(String temporada) {
+        this.temporada = temporada;
+    }
+    
+    }
+
+    
