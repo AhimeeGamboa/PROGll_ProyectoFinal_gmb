@@ -83,7 +83,7 @@ public class JDCanasta extends javax.swing.JDialog {
         JPagar.setText("Pagar");
         JPagar.addActionListener(this::JPagarActionPerformed);
 
-        jLabel3.setText("ola");
+        jLabel3.setText("imagen");
 
         JSeguirComprando.setText("Seguir Comprando");
         JSeguirComprando.addActionListener(this::JSeguirComprandoActionPerformed);
@@ -96,18 +96,18 @@ public class JDCanasta extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(JSeguirComprando, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(JPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JSeguirComprando, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JTotal)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(jLabel3)
-                        .addGap(73, 73, 73))))
+                        .addGap(50, 50, 50))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,11 +137,23 @@ public class JDCanasta extends javax.swing.JDialog {
     }//GEN-LAST:event_JTotalActionPerformed
 
     private void JPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPagarActionPerformed
-        // TODO add your handling code here:
+        String total = JTotal.getText();
+    
+    
+    javax.swing.JOptionPane.showMessageDialog(this, 
+        "Gracias por comprar.\nTotal: " + total, 
+        "Venta Exitosa", 
+        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    
+    if (this.miCanasta != null) {
+        this.miCanasta.vaciarCanasta();
+    }
+    
+    this.dispose();
     }//GEN-LAST:event_JPagarActionPerformed
 
     private void JSeguirComprandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JSeguirComprandoActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_JSeguirComprandoActionPerformed
 
     /**
