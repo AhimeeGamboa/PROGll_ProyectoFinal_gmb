@@ -11,19 +11,30 @@ import java.util.ArrayList;
  * @author celia
  */
 public class Canasta {
-    private ArrayList<Fruta> listaFrutas;
+    private ArrayList<Fruta> lista;
 
     public Canasta() {
-        this.listaFrutas = new ArrayList<>();
+        this.lista = new ArrayList<>();
     }
 
-    public void agregarFruta(Fruta f) {
-        this.listaFrutas.add(f);
+    public void agregarFruta(Fruta fruta) {
+        this.lista.add(fruta);
     }
-    
-    // Método para calcular el total
-    public double calcularTotal() {
-        return listaFrutas.stream().mapToDouble(Fruta::getPrecio).sum();
+
+    public ArrayList<Fruta> getLista() {
+        return lista;
+    }
+
+    public double obtenerTotal() {
+        double total = 0;
+        for (Fruta f : lista) {
+            total += f.getPrecio();
+        }
+        return total;
+    }
+
+    public void vaciarCanasta() {
+        this.lista.clear();
     }
 }
 

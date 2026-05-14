@@ -8,9 +8,12 @@ package Interfaz;
  *
  * @author celia
  */
+import Clases.Canasta;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 public class JFTienda extends javax.swing.JFrame {
+    
+    private Canasta miCanasta = new Canasta();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFTienda.class.getName());
 
@@ -344,8 +347,8 @@ public class JFTienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCatalogoActionPerformed
-    JDCatalogo ventana = new JDCatalogo(this, true);
-    ventana.setVisible(true);     
+    JDCatalogo ventana = new JDCatalogo(this, true, miCanasta); 
+    ventana.setVisible(true);    
     }//GEN-LAST:event_JBCatalogoActionPerformed
 
     private void JBUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBUsuarioActionPerformed
@@ -359,7 +362,7 @@ public class JFTienda extends javax.swing.JFrame {
     }//GEN-LAST:event_JBFrutasespActionPerformed
 
     private void JBCanastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCanastaActionPerformed
-    JDCanasta ventana = new JDCanasta (this, true);
+    JDCanasta ventana = new JDCanasta(this, true, miCanasta); 
     ventana.setVisible(true);
     }//GEN-LAST:event_JBCanastaActionPerformed
 
