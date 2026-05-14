@@ -5,6 +5,7 @@
 package Interfaz;
 
 import Clases.Canasta;
+import Clases.Fruta;
 
 /**
  *
@@ -16,9 +17,23 @@ public class JDCanasta extends javax.swing.JDialog {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDCanasta.class.getName());
 
-    /**
-     * Creates new form JDCanasta
-     */
+    private void cargarListaVisual() {
+    // 1. Validamos que tengamos la canasta para no tronar
+    if (this.miCanasta != null) {
+        
+        // 2. Creamos el modelo (es como el "combustible" de la lista)
+        javax.swing.DefaultListModel modelo = new javax.swing.DefaultListModel();
+        
+        // 3. Recorremos tu ArrayList y agregamos cada fruta al modelo
+        for (Fruta f : miCanasta.getLista()) {
+            modelo.addElement(f.toString()); // Usa el nombre y precio que definiste
+        }
+        
+        // 4. Le decimos a la lista visual que use este modelo
+        listaVisualFrutas.setModel(modelo);
+    }
+}
+    
     public JDCanasta(java.awt.Frame parent, boolean modal, Canasta canastaRecibida) {
         super(parent, modal);
         initComponents();
@@ -47,8 +62,9 @@ public class JDCanasta extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         JTotal = new javax.swing.JTextField();
         JPagar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        JSeguirComprando = new javax.swing.JButton();
+        JEliminar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaVisualFrutas = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -85,10 +101,10 @@ public class JDCanasta extends javax.swing.JDialog {
         JPagar.setText("Pagar");
         JPagar.addActionListener(this::JPagarActionPerformed);
 
-        jLabel3.setText("imagen");
+        JEliminar.setText("Eliminar");
+        JEliminar.addActionListener(this::JEliminarActionPerformed);
 
-        JSeguirComprando.setText("Seguir Comprando");
-        JSeguirComprando.addActionListener(this::JSeguirComprandoActionPerformed);
+        jScrollPane1.setViewportView(listaVisualFrutas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,16 +116,12 @@ public class JDCanasta extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(JPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JSeguirComprando, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(JEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTotal)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(50, 50, 50))))
+                    .addComponent(JTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,16 +131,15 @@ public class JDCanasta extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(JTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addComponent(JPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JSeguirComprando, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(JEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -154,9 +165,9 @@ public class JDCanasta extends javax.swing.JDialog {
     this.dispose();
     }//GEN-LAST:event_JPagarActionPerformed
 
-    private void JSeguirComprandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JSeguirComprandoActionPerformed
+    private void JEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JEliminarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_JSeguirComprandoActionPerformed
+    }//GEN-LAST:event_JEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,12 +175,13 @@ public class JDCanasta extends javax.swing.JDialog {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JEliminar;
     private javax.swing.JButton JPagar;
-    private javax.swing.JButton JSeguirComprando;
     private javax.swing.JTextField JTotal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> listaVisualFrutas;
     // End of variables declaration//GEN-END:variables
 }
