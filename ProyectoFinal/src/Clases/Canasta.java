@@ -36,5 +36,11 @@ public class Canasta {
     public void vaciarCanasta() {
         this.lista.clear();
     }
+    
+    public void eliminarFruta(int indice) {
+    if (indice >= 0 && indice < lista.size()) {
+        lista.remove(indice);
+    }
+}
 }
 

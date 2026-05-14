@@ -4,6 +4,9 @@
  */
 package Interfaz;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author celia
@@ -19,7 +22,11 @@ public class JDUsuario extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
         setTitle("Usuario");
+        
+        Image icono = new ImageIcon(getClass().getResource("/Interfaz/Iconos/Logo_1.PNG")).getImage();
+        setIconImage(icono);
     }
 
     /**

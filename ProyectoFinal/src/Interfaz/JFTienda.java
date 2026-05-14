@@ -9,6 +9,7 @@ package Interfaz;
  * @author celia
  */
 import Clases.Canasta;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 public class JFTienda extends javax.swing.JFrame {
@@ -25,6 +26,9 @@ public class JFTienda extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("Ventana Principal - Tienda");
+        
+        Image icono = new ImageIcon(getClass().getResource("/Interfaz/Iconos/Logo_1.PNG")).getImage();
+        setIconImage(icono);
     }
 
     /**
@@ -357,7 +361,7 @@ public class JFTienda extends javax.swing.JFrame {
     }//GEN-LAST:event_JBUsuarioActionPerformed
 
     private void JBFrutasespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBFrutasespActionPerformed
-    JDFrutasEspeciales ventana = new JDFrutasEspeciales (this, true);
+    JDFrutasEspeciales ventana = new JDFrutasEspeciales (this, true, miCanasta);
     ventana.setVisible(true);
     }//GEN-LAST:event_JBFrutasespActionPerformed
 
