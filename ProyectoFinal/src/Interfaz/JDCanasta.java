@@ -6,6 +6,8 @@ package Interfaz;
 
 import Clases.Canasta;
 import Clases.Fruta;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -49,6 +51,9 @@ public class JDCanasta extends javax.swing.JDialog {
         } else {
         JTotal.setText("$ 0.0");
         }
+        
+        Image icono = new ImageIcon(getClass().getResource("/Interfaz/Iconos/Logo_1.PNG")).getImage();
+        setIconImage(icono);
     }
 
     /**

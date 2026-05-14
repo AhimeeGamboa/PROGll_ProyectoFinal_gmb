@@ -4,6 +4,9 @@
  */
 package Interfaz;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author celia
@@ -20,6 +23,9 @@ public class JFInicioSesion extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Inicio de sesión");
+        
+        Image icono = new ImageIcon(getClass().getResource("/Interfaz/Iconos/Logo_1.PNG")).getImage();
+        setIconImage(icono);
     }
 
     /**

@@ -6,6 +6,8 @@ package Interfaz;
 
 import Clases.Canasta;
 import Clases.FrutaEspecial;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +31,9 @@ public class JDFrutasEspeciales extends javax.swing.JDialog {
         setResizable(false);
         
         this.miCanasta = canastaRecibida;
+        
+        Image icono = new ImageIcon(getClass().getResource("/Interfaz/Iconos/Logo_1.PNG")).getImage();
+        setIconImage(icono);
     }
 
     /**

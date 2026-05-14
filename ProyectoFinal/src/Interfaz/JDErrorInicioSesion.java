@@ -4,6 +4,9 @@
  */
 package Interfaz;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author celia
@@ -21,6 +24,9 @@ public class JDErrorInicioSesion extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Error al iniciar sesión");
+        
+        Image icono = new ImageIcon(getClass().getResource("/Interfaz/Iconos/Logo_1.PNG")).getImage();
+        setIconImage(icono);
     }
 
     /**

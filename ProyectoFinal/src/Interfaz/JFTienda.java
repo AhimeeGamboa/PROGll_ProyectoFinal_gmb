@@ -9,6 +9,7 @@ package Interfaz;
  * @author celia
  */
 import Clases.Canasta;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 public class JFTienda extends javax.swing.JFrame {
@@ -25,6 +26,9 @@ public class JFTienda extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("Ventana Principal - Tienda");
+        
+        Image icono = new ImageIcon(getClass().getResource("/Interfaz/Iconos/Logo_1.PNG")).getImage();
+        setIconImage(icono);
     }
 
     /**
