@@ -4,6 +4,10 @@
  */
 package Interfaz;
 
+import Clases.Canasta;
+import Clases.Fruta;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author celia
@@ -11,7 +15,8 @@ package Interfaz;
 public class JDCatalogo extends javax.swing.JDialog {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDCatalogo.class.getName());
-
+    
+    Canasta miCanasta = new Canasta();
     /**
      * Creates new form JDCatalogo
      */
@@ -21,7 +26,23 @@ public class JDCatalogo extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         setTitle("Catálogo");
     }
-
+    private Fruta buscarEnInventario(String nombre) {
+    switch (nombre.toLowerCase()) {
+        case "manzana": return new Fruta(1, "Manzana", 45.00);
+        case "mango": return new Fruta(2, "Mango", 35.50);
+         case "kiwi": return new Fruta(3, "Kiwi", 80.00);
+        case "fresa": return new Fruta(4, "Fresa", 65.00);
+        case "banana": return new Fruta(5, "Banana", 22.00);
+        case "pera": return new Fruta(6, "Pera", 38.00);
+        case "naranja": return new Fruta(7, "Naranja", 18.00);
+        case "sandia": return new Fruta(8, "Sandia", 15.00);
+        case "durazno": return new Fruta(9, "Durazno", 55.00);
+        case "uvas": return new Fruta(10, "Uvas", 70.00);
+        case "limon": return new Fruta(11, "Limon", 25.00);
+        case "aguacate": return new Fruta(12, "Aguacate", 90.00);
+        default: return null;
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,20 +80,20 @@ public class JDCatalogo extends javax.swing.JDialog {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        JManzana = new javax.swing.JButton();
+        JMango = new javax.swing.JButton();
+        JKiwi = new javax.swing.JButton();
+        JFresa = new javax.swing.JButton();
+        JSandia = new javax.swing.JButton();
+        JNaranja = new javax.swing.JButton();
+        JPera = new javax.swing.JButton();
+        JBanana = new javax.swing.JButton();
+        JDurazno = new javax.swing.JButton();
+        JUvas = new javax.swing.JButton();
+        JLimon = new javax.swing.JButton();
+        JAguacate = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        JBuscarFruta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -111,13 +132,13 @@ public class JDCatalogo extends javax.swing.JDialog {
 
         jLabel6.setText("Fresa");
 
-        jLabel7.setText("(Precio)");
+        jLabel7.setText("$45.00");
 
-        jLabel8.setText("(Precio)");
+        jLabel8.setText("$35.50");
 
-        jLabel9.setText("(Precio)");
+        jLabel9.setText("$80.00");
 
-        jLabel10.setText("(Precio)");
+        jLabel10.setText("$65.00");
 
         jLabel11.setText("Banana");
 
@@ -127,13 +148,13 @@ public class JDCatalogo extends javax.swing.JDialog {
 
         jLabel14.setText("Sandia");
 
-        jLabel15.setText("(Precio)");
+        jLabel15.setText("$15.00");
 
-        jLabel16.setText("(Precio)");
+        jLabel16.setText("$38.00");
 
-        jLabel17.setText("(Precio)");
+        jLabel17.setText("$18.00");
 
-        jLabel18.setText("(Precio)");
+        jLabel18.setText("$22.00");
 
         jLabel19.setText("Durazno");
 
@@ -143,37 +164,49 @@ public class JDCatalogo extends javax.swing.JDialog {
 
         jLabel22.setText("Aguacate");
 
-        jLabel23.setText("(Precio)");
+        jLabel23.setText("$90.00");
 
-        jLabel24.setText("(Precio)");
+        jLabel24.setText("$25.00");
 
-        jLabel25.setText("(Precio)");
+        jLabel25.setText("$70.00");
 
-        jLabel26.setText("(Precio)");
+        jLabel26.setText("$55.00");
 
-        jButton1.setText("Comprar");
+        JManzana.setText("Comprar");
+        JManzana.addActionListener(this::JManzanaActionPerformed);
 
-        jButton2.setText("Comprar");
+        JMango.setText("Comprar");
+        JMango.addActionListener(this::JMangoActionPerformed);
 
-        jButton3.setText("Comprar");
+        JKiwi.setText("Comprar");
+        JKiwi.addActionListener(this::JKiwiActionPerformed);
 
-        jButton4.setText("Comprar");
+        JFresa.setText("Comprar");
+        JFresa.addActionListener(this::JFresaActionPerformed);
 
-        jButton5.setText("Comprar");
+        JSandia.setText("Comprar");
+        JSandia.addActionListener(this::JSandiaActionPerformed);
 
-        jButton6.setText("Comprar");
+        JNaranja.setText("Comprar");
+        JNaranja.addActionListener(this::JNaranjaActionPerformed);
 
-        jButton7.setText("Comprar");
+        JPera.setText("Comprar");
+        JPera.addActionListener(this::JPeraActionPerformed);
 
-        jButton8.setText("Comprar");
+        JBanana.setText("Comprar");
+        JBanana.addActionListener(this::JBananaActionPerformed);
 
-        jButton9.setText("Comprar");
+        JDurazno.setText("Comprar");
+        JDurazno.addActionListener(this::JDuraznoActionPerformed);
 
-        jButton10.setText("Comprar");
+        JUvas.setText("Comprar");
+        JUvas.addActionListener(this::JUvasActionPerformed);
 
-        jButton11.setText("Comprar");
+        JLimon.setText("Comprar");
+        JLimon.addActionListener(this::JLimonActionPerformed);
 
-        jButton12.setText("Comprar");
+        JAguacate.setText("Comprar");
+        JAguacate.addActionListener(this::JAguacateActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -219,28 +252,28 @@ public class JDCatalogo extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9))
+                    .addComponent(JManzana)
+                    .addComponent(JBanana)
+                    .addComponent(JDurazno))
                 .addGap(83, 83, 83)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton7)
-                    .addComponent(jButton10))
+                    .addComponent(JMango)
+                    .addComponent(JPera)
+                    .addComponent(JUvas))
                 .addGap(96, 96, 96)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton11)
+                        .addComponent(JLimon)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                        .addComponent(jButton12))
+                        .addComponent(JAguacate))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton6)
+                        .addComponent(JNaranja)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5))
+                        .addComponent(JSandia))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(JKiwi)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)))
+                        .addComponent(JFresa)))
                 .addGap(50, 50, 50))
         );
         jPanel2Layout.setVerticalGroup(
@@ -260,10 +293,10 @@ public class JDCatalogo extends javax.swing.JDialog {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JManzana, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JMango, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JKiwi, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JFresa, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -278,10 +311,10 @@ public class JDCatalogo extends javax.swing.JDialog {
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JSandia, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JNaranja, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JPera, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBanana, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
@@ -296,10 +329,10 @@ public class JDCatalogo extends javax.swing.JDialog {
                     .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JDurazno, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JUvas, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLimon, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JAguacate, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59))
         );
 
@@ -307,7 +340,7 @@ public class JDCatalogo extends javax.swing.JDialog {
 
         jLabel2.setText("Buscar fruta:");
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        JBuscarFruta.addActionListener(this::JBuscarFrutaActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -318,7 +351,7 @@ public class JDCatalogo extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBuscarFruta, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(403, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -332,7 +365,7 @@ public class JDCatalogo extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JBuscarFruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(515, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -344,9 +377,78 @@ public class JDCatalogo extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void JBuscarFrutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBuscarFrutaActionPerformed
+        String nombreBuscado = JBuscarFruta.getText().trim();
+    Fruta encontrada = buscarEnInventario(nombreBuscado);
+
+    if (encontrada != null) {
+        miCanasta.agregarFruta(encontrada);
+        JOptionPane.showMessageDialog(this, encontrada.getNombre() + " comprada y agregada a la canasta");
+        JBuscarFruta.setText(""); // Limpia el buscador después de comprar
+    } else {
+        JOptionPane.showMessageDialog(this, "La fruta '" + nombreBuscado + "' no existe en nuestro catálogo", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_JBuscarFrutaActionPerformed
+
+    private void JManzanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JManzanaActionPerformed
+        miCanasta.agregarFruta(new Fruta(1, "Manzana", 45.00));
+        JOptionPane.showMessageDialog(this, "Manzana agregada a la canasta");
+    }//GEN-LAST:event_JManzanaActionPerformed
+
+    private void JFresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFresaActionPerformed
+        miCanasta.agregarFruta(new Fruta(4, "Fresa", 65.00));
+        JOptionPane.showMessageDialog(this, "Fresa agregada a la canasta");
+    }//GEN-LAST:event_JFresaActionPerformed
+
+    private void JMangoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMangoActionPerformed
+        miCanasta.agregarFruta(new Fruta(2, "Mango", 35.50));
+        JOptionPane.showMessageDialog(this, "Mango agregada a la canasta");
+    }//GEN-LAST:event_JMangoActionPerformed
+
+    private void JKiwiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JKiwiActionPerformed
+        miCanasta.agregarFruta(new Fruta(3, "Kiwi", 80.00));
+        JOptionPane.showMessageDialog(this, "Kiwi agregada a la canasta");
+    }//GEN-LAST:event_JKiwiActionPerformed
+
+    private void JBananaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBananaActionPerformed
+        miCanasta.agregarFruta(new Fruta(5, "Banana", 22.00));
+        JOptionPane.showMessageDialog(this, "Banana agregada a la canasta");
+    }//GEN-LAST:event_JBananaActionPerformed
+
+    private void JPeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPeraActionPerformed
+        miCanasta.agregarFruta(new Fruta(6, "Pera", 38.00));
+        JOptionPane.showMessageDialog(this, "Pera agregada a la canasta");
+    }//GEN-LAST:event_JPeraActionPerformed
+
+    private void JNaranjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JNaranjaActionPerformed
+        miCanasta.agregarFruta(new Fruta(7, "Naranja", 18.00));
+        JOptionPane.showMessageDialog(this, "Naranja agregada a la canasta");
+    }//GEN-LAST:event_JNaranjaActionPerformed
+
+    private void JSandiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JSandiaActionPerformed
+        miCanasta.agregarFruta(new Fruta(8, "Sandia", 15.00));
+        JOptionPane.showMessageDialog(this, "Sandia agregada a la canasta");
+    }//GEN-LAST:event_JSandiaActionPerformed
+
+    private void JDuraznoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JDuraznoActionPerformed
+        miCanasta.agregarFruta(new Fruta(9, "Durazno", 55.00));
+        JOptionPane.showMessageDialog(this, "Durazno agregada a la canasta");
+    }//GEN-LAST:event_JDuraznoActionPerformed
+
+    private void JUvasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JUvasActionPerformed
+        miCanasta.agregarFruta(new Fruta(10, "Uvas", 70.00));
+        JOptionPane.showMessageDialog(this, "Uvas agregada a la canasta");
+    }//GEN-LAST:event_JUvasActionPerformed
+
+    private void JLimonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JLimonActionPerformed
+        miCanasta.agregarFruta(new Fruta(11, "Limon", 25.00));
+        JOptionPane.showMessageDialog(this, "Limon agregada a la canasta");
+    }//GEN-LAST:event_JLimonActionPerformed
+
+    private void JAguacateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JAguacateActionPerformed
+        miCanasta.agregarFruta(new Fruta(12, "Aguacate", 90.00));
+        JOptionPane.showMessageDialog(this, "Aguacate agregada a la canasta");
+    }//GEN-LAST:event_JAguacateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,18 +488,19 @@ public class JDCatalogo extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton JAguacate;
+    private javax.swing.JButton JBanana;
+    private javax.swing.JTextField JBuscarFruta;
+    private javax.swing.JButton JDurazno;
+    private javax.swing.JButton JFresa;
+    private javax.swing.JButton JKiwi;
+    private javax.swing.JButton JLimon;
+    private javax.swing.JButton JMango;
+    private javax.swing.JButton JManzana;
+    private javax.swing.JButton JNaranja;
+    private javax.swing.JButton JPera;
+    private javax.swing.JButton JSandia;
+    private javax.swing.JButton JUvas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -427,6 +530,5 @@ public class JDCatalogo extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

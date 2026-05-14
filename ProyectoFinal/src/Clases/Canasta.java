@@ -4,10 +4,26 @@
  */
 package Clases;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author celia
  */
 public class Canasta {
+    private ArrayList<Fruta> listaFrutas;
+
+    public Canasta() {
+        this.listaFrutas = new ArrayList<>();
+    }
+
+    public void agregarFruta(Fruta f) {
+        this.listaFrutas.add(f);
+    }
     
+    // Método para calcular el total
+    public double calcularTotal() {
+        return listaFrutas.stream().mapToDouble(Fruta::getPrecio).sum();
+    }
 }
+
